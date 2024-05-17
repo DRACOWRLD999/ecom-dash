@@ -7,7 +7,6 @@ export default function DropBtn() {
     const cn = require('classnames');
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
   return (
-    
     <Dropdown backdrop="blur" className='flex flex-col justify-between h-20 items-center w-40 text-center'>
     <DropdownTrigger>
       <Button 

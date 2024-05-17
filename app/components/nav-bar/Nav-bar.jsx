@@ -5,7 +5,7 @@ import Logo from '../logo/Logo';
 
 export default function Nav() {
   return (
-    <div>
+    <>
         <Navbar className='flex flex-row' isBordered='true'>
             <NavbarBrand className=' flex '>
                 <Logo/>
@@ -36,6 +36,6 @@ export default function Nav() {
         </NavbarItem>
       </NavbarContent>
         </Navbar>
-    </div>
+    </>
   )
 }

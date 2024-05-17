@@ -12,12 +12,12 @@ useEffect(() => {
 }, [])
 
 return (
-    <div className='grid grid-cols-5 gap-2'>
+    <main className='grid grid-cols-5 gap-2'>
     {
         products.map((product) => (
         <ProductCard key={product.id} title={product.title} img={product.image} price={product.price} />
         ))
     }
-    </div>
+    </main>
   )
 }
