@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { Providers } from "../app/providers";
 import Nav from "../components/nav-bar/Nav-bar";
+import ProductCard from "../components/product-card/Product-Card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,30 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  let product = {
+    title: "Product",
+    img: "https://via.placeholder.com/150",
+    price: "$100",
+  };
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Providers>
           <Nav />
+          <div className="flex flex-row flex-wrap justify-center gap-4 p-4">
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          </div>
         {children}
         </Providers>
         </body>
