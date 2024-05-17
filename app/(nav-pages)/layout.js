@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { Providers } from "../app/providers";
 import Nav from "../components/nav-bar/Nav-bar";
-import ProductCard from "../components/product-card/Product-Card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,23 +21,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
           <Nav />
-          <div className="flex flex-row flex-wrap justify-center gap-4 p-4">
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          </div>
-        {children}
+          {children}
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }
+export const revalidate = 3600 // revalidate at most every hour
