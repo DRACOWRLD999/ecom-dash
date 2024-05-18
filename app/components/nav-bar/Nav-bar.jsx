@@ -9,11 +9,11 @@ export default function Nav() {
         <Navbar className='flex flex-row' isBordered='true'>
             <NavbarBrand className=' flex '>
                 <Logo/>
-                <p className="font-bold text-inherit p-4">DASH</p>
+                <p className="font-bold text-inherit p-4 select-none">DASH</p>
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
-              <Link href="" className=' text-secondary-foreground hover:text-primary-800'>
+              <Link href="/" className=' text-secondary-foreground hover:text-primary-800'>
                 Home
               </Link>
           </NavbarItem>

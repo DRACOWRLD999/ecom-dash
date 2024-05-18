@@ -11,11 +11,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  let product = {
-    title: "Product",
-    img: "https://via.placeholder.com/150",
-    price: "$100",
-  };
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
