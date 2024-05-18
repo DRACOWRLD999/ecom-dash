@@ -2,7 +2,7 @@
 import React from 'react'
 import {useEffect, useState } from 'react'
 import ProductCard from '../product-card/Product-Card.jsx'
-import { getProducts } from '../../utls/utils.js'
+import { getProducts } from '../../utils/get-utils.js'
 import CardSkeleton from '../skeleton/Card-Skeleton.jsx'
 export default function Products() {
 let [products, setProducts] = useState([])
@@ -23,7 +23,7 @@ return (
         ))
         :
         products.map((product) => (
-        <ProductCard key={product.id} title={product.title} img={product.image} price={product.price} />
+        <ProductCard key={product.id} title={product.title} img={product.image} price={product.price} id={product.id} />
         ))
     }
     </div>

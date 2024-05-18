@@ -3,7 +3,7 @@ import React from 'react'
 import {Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import { DeletetIcon } from './Delete';
 import { EditIcon } from './Edit';
-export default function DropBtn() {
+export default function DropBtn({id}) {
     const cn = require('classnames');
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
   return (
@@ -21,6 +21,9 @@ export default function DropBtn() {
         className='pt-1 hover:bg-primary-100 pb-2'
           key="edit"
           startContent={<EditIcon className={iconClasses} />}
+          onPress={() => {
+            console.log(`Edit Product ${id}`);
+          }}
         >
           Edit Product
         </DropdownItem>
@@ -28,7 +31,11 @@ export default function DropBtn() {
           key="delete"
           className="text-danger pt-2 pb-1 hover:bg-primary-100"
           color="danger"
-          startContent={<DeletetIcon className={cn(iconClasses, "text-danger")} />}     >
+          startContent={<DeletetIcon className={cn(iconClasses, "text-danger")} />}
+          onPress={() => {
+            console.log(`delete Product ${id}`);
+          }}
+          >
           Delete Product
         </DropdownItem>
     </DropdownMenu>
