@@ -1,19 +1,19 @@
 import React from 'react'
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Button,Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 import Logo from '../logo/Logo';
 
 
 export default function Nav() {
   return (
-    <div>
-        <Navbar className='flex flex-row' isBordered='true'>
+    <>
+        <Navbar className='flex flex-row' isBordered='true' position={'sticky'} >
             <NavbarBrand className=' flex '>
                 <Logo/>
-                <p className="font-bold text-inherit p-4">DASH</p>
+                <p className="font-bold text-inherit p-4 select-none">DASH</p>
             </NavbarBrand>
           <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
-              <Link href="" className=' text-secondary-foreground hover:text-primary-800'>
+              <Link href="/" className=' text-secondary-foreground hover:text-primary-800'>
                 Home
               </Link>
           </NavbarItem>
@@ -36,6 +36,6 @@ export default function Nav() {
         </NavbarItem>
       </NavbarContent>
         </Navbar>
-    </div>
+        </>
   )
 }

@@ -26,7 +26,7 @@ export default function ProductCard(product) {
           </CardFooter>
         </Card>
         <div className=' flex items-center justify-center pt-1'>
-        <DropBtn/>
+        <DropBtn id={product.id}/>
         </div>
     </main>
   )

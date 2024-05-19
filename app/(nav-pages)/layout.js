@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { Providers } from "../app/providers";
+import { Providers } from "../providers.jsx";
 import Nav from "../components/nav-bar/Nav-bar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  let product = {
-    title: "Product",
-    img: "https://via.placeholder.com/150",
-    price: "$100",
-  };
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
@@ -27,4 +23,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-export const revalidate = 3600 // revalidate at most every hour
