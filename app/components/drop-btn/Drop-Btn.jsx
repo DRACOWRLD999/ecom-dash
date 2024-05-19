@@ -1,8 +1,7 @@
 import React from 'react'
-import {Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
-import { DeletetIcon } from './Delete';
+import {Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem, Button, Popover, PopoverContent} from "@nextui-org/react";
+import { DeleteIcon } from './Delete';
 import { EditIcon } from './Edit';
-import { redirect } from 'next/navigation';
 export default function DropBtn({id}) {
     const cn = require('classnames');
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
@@ -29,9 +28,18 @@ export default function DropBtn({id}) {
           key="delete"
           className="text-danger pt-2 pb-1 hover:bg-primary-100"
           color="danger"
-          startContent={<DeletetIcon className={cn(iconClasses, "text-danger")} />}
-          onPress={() => {
-            console.log(`delete Product ${id}`);
+          startContent={<DeleteIcon className={cn(iconClasses, "text-danger")} />}
+          onClick={() => {
+            if (confirm('Are you sure you want to delete this product?')) {
+              fetch(`https://fakestoreapi.com/products/${id}`, {
+                method: 'DELETE'
+              }).then(() => {
+                alert('Product deleted successfully!');
+                window.location.reload();
+              }).catch(() => {
+                alert('An error occurred while deleting the product.');
+              });
+            }
           }}
           >
           Delete Product
