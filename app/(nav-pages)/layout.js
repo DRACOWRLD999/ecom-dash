@@ -3,6 +3,7 @@ import "../globals.css";
 import { Providers } from "../providers.jsx";
 import Nav from "../components/nav-bar/Nav-bar";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,4 +23,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-export const revalidate = 3600 // revalidate at most every hour
