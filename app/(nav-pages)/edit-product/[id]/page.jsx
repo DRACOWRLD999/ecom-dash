@@ -62,27 +62,32 @@ export default function Page({ params }) {
             <Skeleton isLoaded={loaded} height={300} width={300} className='rounded-xl h-[430px] flex items-center justify-center'>
             <Image src={image} alt={title} width={300} height={300}  />
             </Skeleton>
-            <form onSubmit={updateProduct} className='flex flex-col gap-4'>
+            <form onSubmit={updateProduct} className='flex flex-col gap-4 w-96'>
                 <Input
                     label="Title"
+                    variant='bordered'
                     placeholder="Product title"
+                    labelPlacement='outside'
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <Input
+                    labelPlacement='outside'
+                    variant='bordered'
                     label="Price"
                     placeholder="Product price"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                 />
                 <Textarea
+                    labelPlacement='outside'
+                    variant='bordered'
                     label="Description"
                     placeholder="Product description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="max-w-xs"
                 />
-                <Button type="submit">Update Product</Button>
+                <Button type="submit" size='md'>Update Product</Button>
             </form>
         </div>
         </>
