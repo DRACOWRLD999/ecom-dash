@@ -1,12 +1,14 @@
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import DropBtn from '../drop-btn/Drop-Btn';
 
 export default function ProductCard(product) {
+  const router = useRouter()
   return (
     <main className='flex flex-col w-60 h-92 m-6'>
-    <Card shadow="sm" isPressable >
+    <Card shadow="sm" isPressable isHoverable onPress={() => router.push(`product/${product.id}`)}>
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
@@ -18,6 +20,7 @@ export default function ProductCard(product) {
             
               alt={product.title}
               src={product.img}
+              
             />
           </CardBody>
           <CardFooter className="text-small grid grid-cols-1 gap-1">

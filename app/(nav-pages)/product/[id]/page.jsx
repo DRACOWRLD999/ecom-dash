@@ -44,7 +44,8 @@ export default function Page({ params }) {
                     isReadOnly
                     variant="flat"
                     labelPlacement="outside"
-                    className="max-w-xs"                    label="Description"
+                    className="max-w-xs"
+                    label="Description"
                     placeholder="Product description"
                     value={product.description}
                 />
