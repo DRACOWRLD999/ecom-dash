@@ -23,7 +23,7 @@ export default function Page({ params }) {
 
     return (
         <>
-        <h1 className='text-center text-2xl font-bold my-5'>Edit Product</h1>
+        <h1 className='text-center text-2xl font-bold my-5'>Product</h1>
         <div className='flex flex-row gap-x-10 justify-center my-5 items-center '>
 
             <Skeleton isLoaded={loaded} height={300} width={300} className='rounded-xl h-[430px] flex items-center justify-center'>
