@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { Input, Image, Textarea, Button, Skeleton } from "@nextui-org/react";
+import { useRouter } from 'next/navigation';
 
 // Fetch product details by ID
 async function getProduct(id) {
@@ -19,7 +20,7 @@ export default function Page({ params }) {
     const [image, setImage] = useState('');
     const [category, setCategory] = useState('');
     let [loaded, setLoaded] = useState(false);
-
+    const router = useRouter();
     useEffect(() => {
         getProduct(params.id).then((res) => {
             setTitle(res.title);
@@ -47,6 +48,8 @@ export default function Page({ params }) {
             if (response.ok) {
                 const data = await response.json();
                 alert(`Product updated successfully! \nResponse from server: ${JSON.stringify(data)}`);
+                router.push(`/product/${params.id}`)
+
             } else {
                 const errorData = await response.json();
                 alert(`Failed to update product: ${errorData.message}`);
