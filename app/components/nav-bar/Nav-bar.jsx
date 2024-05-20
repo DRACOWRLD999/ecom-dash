@@ -18,12 +18,12 @@ export default function Nav() {
               </Link>
           </NavbarItem>
         <NavbarItem>
-          <Link href="cart"  className=' text-secondary-foreground hover:text-primary-800'>
+          <Link href="/cart"  className=' text-secondary-foreground hover:text-primary-800'>
             Carts
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="user" className=' text-secondary-foreground hover:text-primary-800'>
+          <Link href="/user" className=' text-secondary-foreground hover:text-primary-800'>
             Users
           </Link>
         </NavbarItem>

@@ -17,6 +17,7 @@ export default function Page({ params }) {
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
+    const [category, setCategory] = useState('');
     let [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -25,14 +26,15 @@ export default function Page({ params }) {
             setPrice(res.price);
             setDescription(res.description);
             setImage(res.image);
+            setCategory(res.category);
             setLoaded(true);
         });
     }, [params.id]);
 
     async function updateProduct(e) {
+        const updatedProduct = { title, price, description,category };
+        
         e.preventDefault();
-        const updatedProduct = { title, price, description };
-
         try {
             const response = await fetch(`https://fakestoreapi.com/products/${params.id}`, {
                 method: 'PUT',
@@ -44,7 +46,7 @@ export default function Page({ params }) {
 
             if (response.ok) {
                 const data = await response.json();
-                alert('Product updated successfully!');
+                alert(`Product updated successfully! \nResponse from server: ${JSON.stringify(data)}`);
             } else {
                 const errorData = await response.json();
                 alert(`Failed to update product: ${errorData.message}`);
@@ -78,6 +80,7 @@ export default function Page({ params }) {
                     placeholder="Product price"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
+                    
                 />
                 <Textarea
                     labelPlacement='outside'
@@ -85,6 +88,14 @@ export default function Page({ params }) {
                     label="Description"
                     placeholder="Product description"
                     value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                />
+                <Textarea
+                    labelPlacement='outside'
+                    variant='bordered'
+                    label="category"
+                    placeholder="Product category"
+                    value={category}
                     onChange={(e) => setDescription(e.target.value)}
                 />
                 <Button type="submit" size='md'>Update Product</Button>
